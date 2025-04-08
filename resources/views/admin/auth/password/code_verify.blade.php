@@ -1,0 +1,34 @@
+@extends('admin.layouts.master')
+@section('content')
+<div class="login-page">
+  <div class="message"></div>
+  <div class="login-box">
+    <div class="card">
+      <a href="#" class="mt-2 login-logo">
+        <img src="{{ getImage(getFilePath('logoIcon').'/logo.png') }}" class="img-fluid" width="50%" />
+      </a>
+      <div class="card-body login-card-body">
+        <form class="saveForm" data-storeURL="{{ route('admin.password.verify.code') }}">
+          <div class="input-group mb-3">
+            <input type="text" name="code" class="form-control" autocomplete="off">
+            <p></p>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap justify-content-end">
+            <a href="{{ route('admin.login') }}" class="text-dark">Login</a>
+          </div>
+          <div class="row">
+            <div class="col-mb-4 mt-2">
+              <button type="submit" class="btn btn-dark btn-block">Verify</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
